@@ -6,11 +6,12 @@ import productRoutes from './routes/product.route.js';
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 app.use("/api/products",productRoutes);
 
-app.listen(5000,()=>{
+app.listen(PORT,()=>{
     connectDB();
     console.log("Server Started at http://localhost:5000")
 });
